@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Controlador;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,46 +13,50 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Modelo.DaoUsuario;
-
+import org.json.simple.JSONObject;
+import Modelo.DaoPais;
+import Utileria.Paises;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
+import static java.lang.System.out;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Sandy
  */
-@WebServlet(name = "InicioSesion", urlPatterns = {"/InicioSesion"})
-public class InicioSesion extends HttpServlet {
-
-protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+@WebServlet(name = "RegistroDatos", urlPatterns = {"/RegistroDatos"})
+public class RegistroDatos extends HttpServlet {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String usuario = request.getParameter("txtusuario");
-        String clave = request.getParameter("txtclave");
-        DaoUsuario user = new DaoUsuario();
-        DaoUsuario user2 = new DaoUsuario();
-        if (user.validar(usuario, clave, "Administrador") == 1) {
-            request.getRequestDispatcher("log.jsp").forward(request, response);
-        } else if (user2.validar2(usuario, clave, "Usuario") == 1) {
-            request.getRequestDispatcher("index.jsp").include(request, response);
-        } else if(user2.validar2(usuario, clave, "Usuario") == 0 ) {
-            request.setAttribute("error", "<script>alert('USUARIO o CONTRASENA INCORRECTA')</script>");
-            request.getRequestDispatcher("log.jsp").forward(request, response);
-        }
-        else if(user2.validar2(usuario, clave, "Usuario") == 2 ) {
-            request.getRequestDispatcher("log.jsp").forward(request, response);
-        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        DaoPais paises = new DaoPais();
+         ArrayList<Paises> Pais = new ArrayList<Paises>();
+         Pais = paises.getPaises();
+         Gson n = new Gson();
+         String respuesta = n.toJson(Pais);
+         response.setContentType("application/json");
+         response.setCharacterEncoding("UTF-8");
+         response.getWriter().write(respuesta);
+        
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+         String Usuario = request.getParameter("txtusuario");
+        String Contraseña = request.getParameter("txtclave");
+        String Email = request.getParameter("txtclaverepetida");
     }
 
     @Override

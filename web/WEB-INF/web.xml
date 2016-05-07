@@ -8,6 +8,14 @@
         <servlet-name>DaoUsuario</servlet-name>
         <url-pattern>/DaoUsuario</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DaoPais</servlet-name>
+        <servlet-class>Controlador.RegistroDatos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DaoPais</servlet-name>
+        <url-pattern>/DaoPais</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
