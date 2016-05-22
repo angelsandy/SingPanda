@@ -15,7 +15,7 @@ import java.sql.Statement;
  */
 public class DaoUsuario {
     
-    private Conexion conn = new Conexion();
+    private final Conexion conn = new Conexion();
     private Connection conectionDB = null;
     private Statement st = null;
     private ResultSet rs = null;
@@ -30,7 +30,7 @@ public class DaoUsuario {
         try {
             conectionDB = conn.conexion();
             st = conectionDB.createStatement();
-            rs = st.executeQuery("Select * from usuario where Username ='" + nom + "' and contraseñaUsuario='" + clave + "' AND puestoUsuario='" + puesto + "';");
+            rs = st.executeQuery("Select nombreUsuario from usuario where Username ='" + nom + "' and contraseñaUsuario=AES_ENCRYPT('" + clave + "',UNHEX('F3229A0B371ED2D9441B830D21A390C3')) AND puestoUsuario='" + puesto + "';");
             if (rs.next()) {
                 encontrado = 1;
             }
@@ -49,7 +49,7 @@ public class DaoUsuario {
         try {
             conectionDB = conn.conexion();
             st = conectionDB.createStatement();
-            rs = st.executeQuery("Select * from usuario where Username ='" + nom + "' and contraseñaUsuario='" + clave + "' AND puestoUsuario='" + puesto + "';");
+            rs = st.executeQuery("Select * from usuario where Username ='" + nom + "' and contraseñaUsuario=AES_ENCRYPT('" + clave + "',UNHEX('F3229A0B371ED2D9441B830D21A390C3')) AND puestoUsuario='" + puesto + "';");
             if (rs.next()) {
                 encontrado =1;
             }

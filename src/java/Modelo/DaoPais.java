@@ -14,22 +14,20 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import Utileria.Paises;
 import java.util.ArrayList;
-import com.google.gson.Gson;
-import static java.lang.System.out;
-import java.sql.ResultSetMetaData;
 /**
  *
  * @author Sandy
  */
 public class DaoPais {
-    private Conexion conn;
+    private final Conexion conn;
     private Connection conectionDB;
     private Statement st = null;
     private ResultSet rs = null;
     private JSONObject paisObject;
     private JSONArray  nombrePaisArray;
     private ArrayList Pais;
-    private int numColumns;
+
+    
     public DaoPais() {
         super();
         this.st = null;
@@ -45,7 +43,7 @@ public class DaoPais {
             Pais = new ArrayList<Paises>();
             conectionDB = conn.conexion();
             st = conectionDB.createStatement();
-            rs = st.executeQuery("Select * from Pais");
+            rs = st.executeQuery("Select idPais,nombrePais from Pais");
             while(rs.next()) {
               Paises pais = new Paises();
               pais.setIdPais(rs.getInt("idPais"));

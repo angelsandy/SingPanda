@@ -8,6 +8,18 @@
         <servlet-name>DaoUsuario</servlet-name>
         <url-pattern>/DaoUsuario</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroDatos</servlet-name>
+        <url-pattern>/RegistroDatos</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>DaoUsuarioRegistro</servlet-name>
+        <servlet-class>Controlador.RegistroDatos</servlet-class>
+    </servlet>
+      <servlet-mapping>
+        <servlet-name>DaoUsuarioRegistro</servlet-name>
+        <url-pattern>/DaoUsuarioRegistro</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>DaoPais</servlet-name>
         <servlet-class>Controlador.RegistroDatos</servlet-class>
@@ -15,10 +27,14 @@
     <servlet-mapping>
         <servlet-name>DaoPais</servlet-name>
         <url-pattern>/DaoPais</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>     
+
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+    <welcome-file>register.jsp</welcome-file>
+</welcome-file-list>
 </web-app>

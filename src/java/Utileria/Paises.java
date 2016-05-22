@@ -5,20 +5,14 @@
  */
 package Utileria;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-
 
 public class Paises {
-    private int idPais;
-    private String nombrePais ;
-public Paises (){
 
-}
+    private int idPais;
+    private String nombrePais;
+    public Paises() {
+
+    }
 
     public int getIdPais() {
         return idPais;

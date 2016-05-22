@@ -2,7 +2,7 @@ var elementosUsuario = document.getElementsByName("txtusuario");
 var elementosPassword = document.getElementsByName("txtclave");
 var elementosDomicilio = document.getElementsByName("txtusuario");
 var elementosTelefono = document.getElementsByName("telefono");
-var elementosPais = document.getElementsByName("pais");
+var elementosPais = document.getElementsByName("PaisS");
 var elementosCorreo = document.getElementsByName("correo");
 var elementosradio = document.getElementsByName("sexo");
 
