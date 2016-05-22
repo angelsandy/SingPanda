@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head >
+<link rel = "stylesheet" type ="text/css" href="LoginStyle.css">
+<link rel="stylesheet" type="text/css" href="../plantilla.css">
+<link rel = "stylesheet" type ="text/css" href="botones.css">
+<link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="estilos.css">
+<script src= "js/main.js"></script>
+ <script type="text/javascript" src="fondos.js"></script>
+ <script src="Validaciones.js"></script>
+<title>
+nJoy
+</title>
+
+<script>
+    function submitOnClick(formName){
+        document.forms[formName].submit();
+    }
+</script>
+<link rel="icon" type="image/ico" href="favicon.ico">
+</head>
+<body  BACKGROUND="im/1.jpg"   onload= "presImagen()" >
+    
+    
+<!------------logo------->
+
+<!--<div class="frase">"Porque todos necesitamos ese relax para desconectarnos del mundo y encontrar nuestro ritmo feliz"</div>-->
+<div class="divmenu"> 
+
+ <header>
+	 <div id="logo">
+            <img src="../Log in/logo.png" alt="" height="80" width="110" />
+        </div>
+        <nav>
+            <ul>
+            <li><a href="#"><span class"ini"><i class="icon icon-home"></i></span>Inicio</a>
+
+                </li>
+            <li><a href="#"><span class"inf"><i class="icon icon-music"></i></span>Musica</a>
+                <ul>
+                    <li><a href="#">Propia</a></li>
+                    <li><a href="#">Amistades</a></li>
+                </ul>
+                </li>
+            <li><a href="#"><span class"be"><i class="icon icon-profile"></i></span>Perfil</a>
+            </li>
+            <li><a href="#"><span class"amistad"><i class="icon icon-users"></i></span>Amigos</a>
+                <ul>
+                    <li><a href="#">Bloqueados</a></li>
+					 <li><a href="#">Amigos</a></li>
+                </ul>
+                </li>
+            <li><a href="#"><span class"ventas"><i class="icon icon-coin-dollar"></i></span>Ventas</a>
+                <ul>
+                    <li><a href="#">Ventas totales</a></li>
+					<li><a href="#">Canciones a la venta</a></li>
+                </ul>
+            </li>
+			 <li><a href="#"><span class"headphones"><i class="icon icon-headphones"></i></span>Lista musical</a>
+            </li>
+            </ul>
+        </nav>
+    </header>
+
+
+            
+
+</div>
+<div class="search" ><label for="texto"> Busqueda:</label> 
+    <input type="text" name="user" id= "usuario" maxlength="30" placeholder="One Republic" onfocus="focusear()" />
+      <input type="image" src="submit.gif" alt="Buscar">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="vacio" >
+    <img src="Imagenes/Perfil2.png" alt="" height="100" width="100" />
+   <div class="wrapmain" >
+    
+   <h1 style="color:rgb(229,87,123);" > Pistas populares</h1><br />
+        <p>One Republic - Good Life Original</p>
+            <audio controls>
+  <source src="Musica/OneRepublic - Good Life.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio><br /> 
+<input type="image" src="submit.gif" alt="Perfil de autor">&nbsp;&nbsp;&nbsp;
+ <input type="image" src="submit.gif" alt="Comprar">
+ <br /> 
+<p>One Republic - Good Life v2</p>
+            <audio controls>
+  <source src="Musica/OneRepublic - Good Life.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio><br />
+<input type="image" src="submit.gif" alt="Perfil de autor">&nbsp;&nbsp;&nbsp;
+ <input type="image" src="submit.gif" alt="Comprar">
+ <br /> 
+
+<p>One Republic - Good Life Remaster</p>
+            <audio controls>
+  <source src="Musica/OneRepublic - Good Life.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio><br />
+<input type="image" src="submit.gif" alt="Perfil de autor">&nbsp;&nbsp;&nbsp;
+ <input type="image" src="submit.gif" alt="Comprar">
+ <br /> 
+<p>One Republic - Good Life Re: Remaster HD</p>
+            <audio controls>
+  <source src="Musica/OneRepublic - Good Life.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio><br />
+           <input type="image" src="submit.gif" alt="Perfil de autor">&nbsp;&nbsp;&nbsp;
+ <input type="image" src="submit.gif" alt="Comprar">
+ <br /> 
+</div>
+           
+</div>
+
+<div class="lleno" >
+
+<div class="contenedor" >
+    <div class="wrap">
+        <h2 style="text-align: center"> Publicidad</h2>
+        <hr/>
+        <!--<p> Es gratis y siempre sera asi </p>-->
+        <form action="" name="formulario_registro"  method="post"  onsubmit="return validar()">
+            <div>
+                
+             <video width="256" height="192"  id="myVideo" controls autoplay >
+    <source src="Videos/1.mp4" id="mp4Source" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+           
+            </div>
+        </form>
+    </div>
+</div></div>
+<div class="partebaja" >
+    <small style="text-align: center"> Términos y Condiciones de la Oferta de nJoy®. Los usuarios que se hayan suscrito al servicio Premium o Unlimited o que hayan tomado una prueba gratuita no son elegibles para esta oferta. 
+   <!--  <img src = "im/1.jpg"      name = "foto"  id="foto"    height = 200      width = 300> <br/> <br/> -->
+    </small>
+</div>
+
+
+<!-----------controles---------->
+
+<!--<h1 class="title">Porque todos necesitamos ese relax en nuestra vida, solo registrate y disfruta que es GRATIS </h1>-->
+<!-------fin--------->
+
+
+</body>
+</html>
